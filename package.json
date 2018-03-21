@@ -1,0 +1,24 @@
+{
+  "name": "ll_ci",
+  "version": "1.0.0",
+  "description": "\"# ll_cy\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrRitani/ll_ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrRitani/ll_ci/issues"
+  },
+  "homepage": "https://github.com/MrRitani/ll_ci#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
