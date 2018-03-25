@@ -3,13 +3,59 @@
 const SiteLogo = (props) => {
 
 	return (
-		<a href={props.link}>
+		<a className="siteLogo" href={props.link}>
 			<img src={'images/lottoland.svg'}/>
 		</a>
 	)
 };
 
 //-----END SITELOGO-----------------------------------------------------------------------------------------------------
+//-----BUTTON-----------------------------------------------------------------------------------------------------------
+
+const Button = (props) => {
+
+	let styleSetNum = 1;
+	if( props.styleSetNum ){
+        styleSetNum = props.styleSetNum;
+	}
+	const classes = "btn styleSet_"+ styleSetNum;
+
+    return (
+		<a className={classes} href={props.link} >
+            {props.children}
+		</a>
+	)
+
+};
+
+//-----END BUTTON-------------------------------------------------------------------------------------------------------
+//-----HEADER BANNER----------------------------------------------------------------------------------------------------
+
+const HeaderBanner = (props) => {
+
+    return (
+		<a className="headerBanner" href={props.link} >
+			<img src={'images/syndicates_60x60.png'} />
+			<p>{props.children}</p>
+			<div>{props.callToAction}</div>
+		</a>
+    )
+};
+
+//-----END HEADER BANNER------------------------------------------------------------------------------------------------
+//-----USER NAV---------------------------------------------------------------------------------------------------------
+
+const UserNav = (props) => {
+
+    return (
+		<div className="userNav">
+			<Button link="#">Log In</Button>
+			<Button link="#">Register</Button>
+		</div>
+    )
+};
+
+//-----END USER NAV-----------------------------------------------------------------------------------------------------
 //-----HEADER-----------------------------------------------------------------------------------------------------------
 
 const Header = (props) => (
@@ -19,10 +65,15 @@ const Header = (props) => (
 			{/*logo*/}
 			<SiteLogo link="#" />
 
+			{/*header banner*/}
+			<HeaderBanner link="#" callToAction="Play Now !" >Boost your winning chances!<br/>Check out the Lottoland syndicates</HeaderBanner>
+
 			{/*user nav*/}
+			<UserNav isLogged="" />
+
 		</div>
 
-		<div className="row row_2">
+		<div className="row row_2 full_width">
             {/*primary nav*/}
 		</div>
 
