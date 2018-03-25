@@ -93,24 +93,54 @@ const PrimaryNav = (props) => {
 //-----END PRIMARY NAV--------------------------------------------------------------------------------------------------
 //-----SECONDARY NAV----------------------------------------------------------------------------------------------------
 
-const SecondaryNav = (props) => {
-
-    return (
-		<ul className="secondaryNav">
-			<li>
-				<a href="#">EuroJackpot</a>
-			</li>
-			<li className="selected">
-				<a href="#">EuroJackpot Results & Prize Breakdown</a>
-			</li>
-			<li>
-				<a href="#">EuroJackpot Help y Faq</a>
-			</li>
-		</ul>
-    )
-};
+const SecondaryNav = (props) => (
+	<ul className="secondaryNav">
+		<li>
+			<a href="#">EuroJackpot</a>
+		</li>
+		<li className="selected">
+			<a href="#">EuroJackpot Results & Prize Breakdown</a>
+		</li>
+		<li>
+			<a href="#">EuroJackpot Help y Faq</a>
+		</li>
+	</ul>
+);
 
 //-----END SECONDARY NAV------------------------------------------------------------------------------------------------
+//-----RESULTS LOTTERY DAY SELECTOR-------------------------------------------------------------------------------------
+
+const ResultsLotteryDaySelector = (props) => (
+	<div className="resultsLotteryDaySelector">
+		<select className="dateSelector">
+			<option>Please Select Date</option>
+		</select>
+
+		<select className="yearSelector">
+			<option>Please Select Year</option>
+			<option>2016</option>
+			<option>2017</option>
+			<option selected>2018</option>
+		</select>
+	</div>
+);
+
+//-----END RESULTS LOTTERY DAY SELECTOR---------------------------------------------------------------------------------
+//-----WINNER COMBINATION-----------------------------------------------------------------------------------------------
+
+const WinnerCombination = (props) => (
+	<div className="winnerCombination">
+		<div className="lotteryNumber">{props.n1}</div>
+		<div className="lotteryNumber">{props.n2}</div>
+		<div className="lotteryNumber">{props.n3}</div>
+		<div className="lotteryNumber">{props.n4}</div>
+		<div className="lotteryNumber">{props.n5}</div>
+		<div className="lotteryNumber extra">{props.e1}</div>
+		<div className="lotteryNumber extra">{props.e2}</div>
+	</div>
+);
+
+//-----END WINNER COMBINATION-------------------------------------------------------------------------------------------
 //-----HEADER-----------------------------------------------------------------------------------------------------------
 
 const Header = (props) => (
@@ -142,7 +172,7 @@ const Header = (props) => (
 //-----PAGE-------------------------------------------------------------------------------------------------------------
 
 const Page = (props) => (
-	<div className="page">
+	<div className="page pageWinningResults">
 
 		<div className="row row_1">
 			{/*secondary nav*/}
@@ -150,24 +180,40 @@ const Page = (props) => (
 		</div>
 
 		<div className="row row_2">
-            {/* title with selector*/}
+            {/* title*/}
+            <h1 className="sectionTitle">EUROJACKPOT RESULTS & WINNING NUMBERS</h1>
+
+			<ResultsLotteryDaySelector />
+
+			<br className="clear" />
+			{/*<hr />*/}
 		</div>
+
 
 		<div className="row row_3">
             {/*results title*/}
+			<h2 className="sectionTitle">EuroJackpot Results for <span>Friday 23 Mar 2018</span></h2>
+
+            {/*main result*/}
+			<WinnerCombination
+				n1 = "2"
+				n2 = "4"
+				n3 = "13"
+				n4 = "2"
+				n5 = "15"
+				e1 = "3"
+				e2 = "2"
+			/>
+
 		</div>
 
 		<div className="row row_4">
-            {/*main result*/}
-		</div>
-
-		<div className="row row_5">
             {/*results*/}
             {/*information panel */}
             {/*information panel 2*/}
 		</div>
 
-		<div className="row row_6">
+		<div className="row row_5">
             {/*breadcrumbs*/}
 		</div>
 

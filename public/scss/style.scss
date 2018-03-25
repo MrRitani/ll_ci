@@ -19,6 +19,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: $roboto-slab;
+  cursor: default;
 }
 
 #{$app_name}{
@@ -75,6 +76,28 @@ body{
   }
 
   //-----END Style Sets
+
+}
+
+.sectionTitle{
+  font-weight: 900;
+  font-size: 20px;
+}
+
+hr{
+  border: 0;
+  border-top: 1px solid $c_grey_100;
+}
+
+.clear{
+  clear: both;
+}
+
+select{
+
+  &:focus{
+    outline: none;
+  }
 
 }
 
@@ -177,43 +200,47 @@ body{
 //-----END HEADER-------------------------------------------------------------------------------------------------------
 //-----PRIMARY NAV------------------------------------------------------------------------------------------------------
 
-.primaryNav{
-  display: block;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  list-style: none;
+#{$app_name} {
 
-  li{
-    display: inline-block;
+  .primaryNav {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: none;
 
-    a{
-      display: block;
-      padding: 10px 20px;
-      line-height: 20px;
-      font-size: 14px;
-      color: white;
-      text-decoration: none;
-      font-weight: 900;
-      transition: 0.4s background-color ease;
+    li {
+      display: inline-block;
 
-      &:visited{
+      a {
+        display: block;
+        padding: 10px 20px;
+        line-height: 20px;
+        font-size: 14px;
         color: white;
+        text-decoration: none;
+        font-weight: 900;
+        transition: 0.4s background-color ease;
+
+        &:visited {
+          color: white;
+
+        }
+
+        &:hover {
+          background-color: $c_green_101;
+        }
 
       }
 
-      &:hover{
-        background-color: $c_green_101;
-      }
+      &.selected {
 
-    }
+        a {
+          background-color: $c_green_101;
+          cursor: default;
+        }
 
-    &.selected{
-
-      a{
-        background-color: $c_green_101;
-        cursor: default;
       }
 
     }
@@ -225,63 +252,67 @@ body{
 //-----END PRIMARY NAV--------------------------------------------------------------------------------------------------
 //-----SECONDARY NAV----------------------------------------------------------------------------------------------------
 
-.secondaryNav{
-  display: block;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  list-style: none;
+#{$app_name} {
 
-  li{
-    display: inline-block;
-    min-width: 30%;
+  .secondaryNav {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 20px 0 0 0;
+    text-align: center;
+    list-style: none;
 
-    a{
-      display: block;
-      padding: 10px 20px;
-      line-height: 20px;
-      font-size: 14px;
-      color: $c_grey_10;
-      text-decoration: none;
-      font-weight: 900;
-      transition: 0.4s background-color ease;
-      border-top: 1px solid $c_grey_50;
-      border-bottom: 1px solid $c_grey_50;
+    li {
+      display: inline-block;
+      min-width: 33.33%;
 
-      &:visited{
+      a {
+        display: block;
+        padding: 10px 20px;
+        line-height: 20px;
+        font-size: 14px;
         color: $c_grey_10;
+        text-decoration: none;
+        font-weight: 900;
+        transition: 0.4s background-color ease;
+        border-top: 1px solid $c_grey_50;
+        border-bottom: 1px solid $c_grey_50;
+
+        &:visited {
+          color: $c_grey_10;
+
+        }
+
+        &:hover {
+          background-color: $c_green_101;
+        }
 
       }
 
-      &:hover{
-        background-color: $c_green_101;
+      &.selected {
+
+        a {
+          background-color: $c_green_101;
+          color: white;
+          cursor: default;
+        }
+
       }
 
-    }
-
-    &.selected{
-
-      a{
-        background-color: $c_green_101;
-        color: white;
-        cursor: default;
+      &:first-child {
+        a {
+          border-radius: 5px 0 0 5px;
+          border-left: 1px solid $c_grey_50;
+        }
       }
 
-    }
-
-    &:first-child{
-      a{
-        border-radius: 5px 0 0 5px;
-        border-left: 1px solid $c_grey_50;
+      &:last-child {
+        a {
+          border-radius: 0 5px 5px 0;
+          border-right: 1px solid $c_grey_50;
+        }
       }
-    }
 
-    &:last-child{
-      a{
-        border-radius: 0 5px 5px 0;
-        border-right: 1px solid $c_grey_50;
-      }
     }
 
   }
@@ -289,3 +320,93 @@ body{
 }
 
 //-----END SECONDARY NAV------------------------------------------------------------------------------------------------
+//-----PAGE RESULTS-----------------------------------------------------------------------------------------------------
+
+#{$app_name}{
+
+  .page{
+
+    &.pageWinningResults{
+
+      .row{
+
+        //Page header and lottery date selector
+        &.row_2{
+          margin-top: 40px;
+
+          h1{
+            float: left;
+            margin: 0;
+            font-size: 20px;
+            line-height: 40px;
+          }
+
+          .resultsLotteryDaySelector{
+            float: right;
+            line-height: 40px;
+
+            select{
+              position: relative;
+              margin-left: 20px;
+              line-height: 30px;
+              height: 30px;
+              border-radius: 5px;
+              margin-top: 5px;
+              cursor: pointer;
+              font-size: 16px;
+              padding: 0 10px;
+            }
+
+          }
+
+        }
+
+        //Winner combination
+        &.row_3{
+          position: relative;
+          box-sizing: border-box;
+          background-color: $c_green_100;
+          padding: 20px;
+          margin-top: 10px;
+
+          h2{
+            float: left;
+            font-size: 18px;
+            line-height: 30px;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+            color: white;
+            cursor: default;
+          }
+
+          .winnerCombination{
+            position: relative;
+            float: right;
+            text-align: right;
+
+            .lotteryNumber{
+              display: inline-block;
+              line-height: 30px;
+              width: 30px;
+              height: 30px;
+              background-color: white;
+              margin: 0 5px;
+              border-radius: 50px;
+              text-align: center;
+              font-weight: 600;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+//-----END PAGE RESULTS-------------------------------------------------------------------------------------------------

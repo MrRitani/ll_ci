@@ -5,7 +5,8 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", serif; }
+  font-family: "Roboto", serif;
+  cursor: default; }
 
 #app .row {
   position: relative;
@@ -36,6 +37,20 @@ body {
     text-decoration: none; }
     .btn.styleSet_1:first-child {
       border-left: 0; }
+
+.sectionTitle {
+  font-weight: 900;
+  font-size: 20px; }
+
+hr {
+  border: 0;
+  border-top: 1px solid #d3d3d3; }
+
+.clear {
+  clear: both; }
+
+select:focus {
+  outline: none; }
 
 #app header {
   position: relative;
@@ -92,16 +107,16 @@ body {
     margin-top: 10px;
     background-image: linear-gradient(90deg, #a4cc25, #64a407); }
 
-.primaryNav {
+#app .primaryNav {
   display: block;
   position: relative;
   padding: 0;
   margin: 0;
   text-align: center;
   list-style: none; }
-  .primaryNav li {
+  #app .primaryNav li {
     display: inline-block; }
-    .primaryNav li a {
+    #app .primaryNav li a {
       display: block;
       padding: 10px 20px;
       line-height: 20px;
@@ -110,25 +125,25 @@ body {
       text-decoration: none;
       font-weight: 900;
       transition: 0.4s background-color ease; }
-      .primaryNav li a:visited {
+      #app .primaryNav li a:visited {
         color: white; }
-      .primaryNav li a:hover {
+      #app .primaryNav li a:hover {
         background-color: #c3dc41; }
-    .primaryNav li.selected a {
+    #app .primaryNav li.selected a {
       background-color: #c3dc41;
       cursor: default; }
 
-.secondaryNav {
+#app .secondaryNav {
   display: block;
   position: relative;
   padding: 0;
-  margin: 0;
+  margin: 20px 0 0 0;
   text-align: center;
   list-style: none; }
-  .secondaryNav li {
+  #app .secondaryNav li {
     display: inline-block;
-    min-width: 30%; }
-    .secondaryNav li a {
+    min-width: 33.33%; }
+    #app .secondaryNav li a {
       display: block;
       padding: 10px 20px;
       line-height: 20px;
@@ -139,19 +154,69 @@ body {
       transition: 0.4s background-color ease;
       border-top: 1px solid #949494;
       border-bottom: 1px solid #949494; }
-      .secondaryNav li a:visited {
+      #app .secondaryNav li a:visited {
         color: #535353; }
-      .secondaryNav li a:hover {
+      #app .secondaryNav li a:hover {
         background-color: #c3dc41; }
-    .secondaryNav li.selected a {
+    #app .secondaryNav li.selected a {
       background-color: #c3dc41;
       color: white;
       cursor: default; }
-    .secondaryNav li:first-child a {
+    #app .secondaryNav li:first-child a {
       border-radius: 5px 0 0 5px;
       border-left: 1px solid #949494; }
-    .secondaryNav li:last-child a {
+    #app .secondaryNav li:last-child a {
       border-radius: 0 5px 5px 0;
       border-right: 1px solid #949494; }
+
+#app .page.pageWinningResults .row.row_2 {
+  margin-top: 40px; }
+  #app .page.pageWinningResults .row.row_2 h1 {
+    float: left;
+    margin: 0;
+    font-size: 20px;
+    line-height: 40px; }
+  #app .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector {
+    float: right;
+    line-height: 40px; }
+    #app .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector select {
+      position: relative;
+      margin-left: 20px;
+      line-height: 30px;
+      height: 30px;
+      border-radius: 5px;
+      margin-top: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      padding: 0 10px; }
+#app .page.pageWinningResults .row.row_3 {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #a4cc25;
+  padding: 20px;
+  margin-top: 10px; }
+  #app .page.pageWinningResults .row.row_3 h2 {
+    float: left;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    color: white;
+    cursor: default; }
+  #app .page.pageWinningResults .row.row_3 .winnerCombination {
+    position: relative;
+    float: right;
+    text-align: right; }
+    #app .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber {
+      display: inline-block;
+      line-height: 30px;
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      margin: 0 5px;
+      border-radius: 50px;
+      text-align: center;
+      font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map */
