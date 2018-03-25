@@ -1,6 +1,15 @@
 @import 'variables';
 @import 'colors';
 
+//-----FONTS------------------------------------------------------------------------------------------------------------
+
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+// Font Variables
+$roboto-slab: 'Roboto', serif;
+
+//-----END FONTS--------------------------------------------------------------------------------------------------------
 //-----GLOBALS----------------------------------------------------------------------------------------------------------
 
 body{
@@ -9,7 +18,7 @@ body{
   height: 100vh;
   margin: 0;
   padding: 0;
-
+  font-family: $roboto-slab;
 }
 
 #{$app_name}{
@@ -24,6 +33,12 @@ body{
       max-width: 100%;
     }
 
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
   }
 
 }
@@ -32,8 +47,15 @@ body{
   position: relative;
   font-size: 14px;
   font-weight: 600;
-  color: $c_green_101;
+  color: $c_green_99;
   line-height: 20px;
+  transition: 0.4s color ease;
+
+  &:hover{
+    color: $c_green_101;
+  }
+
+  //-----Style Sets
 
   &.styleSet_1{
     display: inline-block;
@@ -51,6 +73,8 @@ body{
   &.styleSet_2{
 
   }
+
+  //-----END Style Sets
 
 }
 
@@ -81,7 +105,7 @@ body{
       float: left;
       margin-left: 30px;
       text-decoration: none;
-      color: $c_grey_100;
+      color: $c_green_10;
       transition: 0.4s color ease;
 
       img{
@@ -120,11 +144,11 @@ body{
       &:hover{
 
         p{
-          color: $c_green_101;
+          color: $c_green_99;
         }
 
         div{
-          color: $c_green_101;
+          color: $c_green_99;
         }
 
       }
@@ -134,17 +158,16 @@ body{
     .userNav{
       position: relative;
       float: right;
+
+      .btn{
+        margin-top: 20px;
+      }
+
     }
 
     .row_2{
-      background-image: linear-gradient(90deg, $c_green_100, $c_green_101);
-    }
-
-
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
+      margin-top: 10px;
+      background-image: linear-gradient(90deg, $c_green_100, $c_green_99);
     }
 
   }
@@ -152,3 +175,117 @@ body{
 }
 
 //-----END HEADER-------------------------------------------------------------------------------------------------------
+//-----PRIMARY NAV------------------------------------------------------------------------------------------------------
+
+.primaryNav{
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+
+  li{
+    display: inline-block;
+
+    a{
+      display: block;
+      padding: 10px 20px;
+      line-height: 20px;
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+      font-weight: 900;
+      transition: 0.4s background-color ease;
+
+      &:visited{
+        color: white;
+
+      }
+
+      &:hover{
+        background-color: $c_green_101;
+      }
+
+    }
+
+    &.selected{
+
+      a{
+        background-color: $c_green_101;
+        cursor: default;
+      }
+
+    }
+
+  }
+
+}
+
+//-----END PRIMARY NAV--------------------------------------------------------------------------------------------------
+//-----SECONDARY NAV----------------------------------------------------------------------------------------------------
+
+.secondaryNav{
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+
+  li{
+    display: inline-block;
+    min-width: 30%;
+
+    a{
+      display: block;
+      padding: 10px 20px;
+      line-height: 20px;
+      font-size: 14px;
+      color: $c_grey_10;
+      text-decoration: none;
+      font-weight: 900;
+      transition: 0.4s background-color ease;
+      border-top: 1px solid $c_grey_50;
+      border-bottom: 1px solid $c_grey_50;
+
+      &:visited{
+        color: $c_grey_10;
+
+      }
+
+      &:hover{
+        background-color: $c_green_101;
+      }
+
+    }
+
+    &.selected{
+
+      a{
+        background-color: $c_green_101;
+        color: white;
+        cursor: default;
+      }
+
+    }
+
+    &:first-child{
+      a{
+        border-radius: 5px 0 0 5px;
+        border-left: 1px solid $c_grey_50;
+      }
+    }
+
+    &:last-child{
+      a{
+        border-radius: 0 5px 5px 0;
+        border-right: 1px solid $c_grey_50;
+      }
+    }
+
+  }
+
+}
+
+//-----END SECONDARY NAV------------------------------------------------------------------------------------------------

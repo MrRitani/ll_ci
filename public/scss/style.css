@@ -1,9 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 body {
   position: relative;
   width: 100%;
   height: 100vh;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Roboto", serif; }
 
 #app .row {
   position: relative;
@@ -12,13 +14,20 @@ body {
   max-width: 960px; }
   #app .row.full_width {
     max-width: 100%; }
+  #app .row:after {
+    content: '';
+    display: block;
+    clear: both; }
 
 .btn {
   position: relative;
   font-size: 14px;
   font-weight: 600;
   color: #64a407;
-  line-height: 20px; }
+  line-height: 20px;
+  transition: 0.4s color ease; }
+  .btn:hover {
+    color: #c3dc41; }
   .btn.styleSet_1 {
     display: inline-block;
     padding: 0 0 0 20px;
@@ -77,11 +86,72 @@ body {
   #app header .userNav {
     position: relative;
     float: right; }
+    #app header .userNav .btn {
+      margin-top: 20px; }
   #app header .row_2 {
+    margin-top: 10px;
     background-image: linear-gradient(90deg, #a4cc25, #64a407); }
-  #app header:after {
-    content: '';
-    display: block;
-    clear: both; }
+
+.primaryNav {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none; }
+  .primaryNav li {
+    display: inline-block; }
+    .primaryNav li a {
+      display: block;
+      padding: 10px 20px;
+      line-height: 20px;
+      font-size: 14px;
+      color: white;
+      text-decoration: none;
+      font-weight: 900;
+      transition: 0.4s background-color ease; }
+      .primaryNav li a:visited {
+        color: white; }
+      .primaryNav li a:hover {
+        background-color: #c3dc41; }
+    .primaryNav li.selected a {
+      background-color: #c3dc41;
+      cursor: default; }
+
+.secondaryNav {
+  display: block;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none; }
+  .secondaryNav li {
+    display: inline-block;
+    min-width: 30%; }
+    .secondaryNav li a {
+      display: block;
+      padding: 10px 20px;
+      line-height: 20px;
+      font-size: 14px;
+      color: #535353;
+      text-decoration: none;
+      font-weight: 900;
+      transition: 0.4s background-color ease;
+      border-top: 1px solid #949494;
+      border-bottom: 1px solid #949494; }
+      .secondaryNav li a:visited {
+        color: #535353; }
+      .secondaryNav li a:hover {
+        background-color: #c3dc41; }
+    .secondaryNav li.selected a {
+      background-color: #c3dc41;
+      color: white;
+      cursor: default; }
+    .secondaryNav li:first-child a {
+      border-radius: 5px 0 0 5px;
+      border-left: 1px solid #949494; }
+    .secondaryNav li:last-child a {
+      border-radius: 0 5px 5px 0;
+      border-right: 1px solid #949494; }
 
 /*# sourceMappingURL=style.css.map */

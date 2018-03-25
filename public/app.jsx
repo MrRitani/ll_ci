@@ -56,6 +56,61 @@ const UserNav = (props) => {
 };
 
 //-----END USER NAV-----------------------------------------------------------------------------------------------------
+//-----PRIMARY NAV------------------------------------------------------------------------------------------------------
+
+const PrimaryNav = (props) => {
+
+    return (
+		<ul className="primaryNav">
+			<li>
+				<a href="#">PowerBall</a>
+			</li>
+			<li>
+				<a href="#">Euromillons</a>
+			</li>
+			<li className="selected">
+				<a href="#">EuroJackpot</a>
+			</li>
+			<li>
+				<a href="#">More Jackpots</a>
+			</li>
+			<li>
+				<a href="#">Syndicates</a>
+			</li>
+			<li>
+				<a href="#">Scratchcards</a>
+			</li>
+			<li>
+				<a href="#">Instant Win</a>
+			</li>
+			<li>
+				<a href="#">Games</a>
+			</li>
+		</ul>
+    )
+};
+
+//-----END PRIMARY NAV--------------------------------------------------------------------------------------------------
+//-----SECONDARY NAV----------------------------------------------------------------------------------------------------
+
+const SecondaryNav = (props) => {
+
+    return (
+		<ul className="secondaryNav">
+			<li>
+				<a href="#">EuroJackpot</a>
+			</li>
+			<li className="selected">
+				<a href="#">EuroJackpot Results & Prize Breakdown</a>
+			</li>
+			<li>
+				<a href="#">EuroJackpot Help y Faq</a>
+			</li>
+		</ul>
+    )
+};
+
+//-----END SECONDARY NAV------------------------------------------------------------------------------------------------
 //-----HEADER-----------------------------------------------------------------------------------------------------------
 
 const Header = (props) => (
@@ -74,7 +129,10 @@ const Header = (props) => (
 		</div>
 
 		<div className="row row_2 full_width">
-            {/*primary nav*/}
+			<div className="row row_2_1">
+                {/*primary nav*/}
+                <PrimaryNav />
+			</div>
 		</div>
 
 	</header>
@@ -88,6 +146,7 @@ const Page = (props) => (
 
 		<div className="row row_1">
 			{/*secondary nav*/}
+			<SecondaryNav />
 		</div>
 
 		<div className="row row_2">
