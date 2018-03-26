@@ -6,7 +6,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", serif;
-  cursor: default; }
+  cursor: default;
+  box-sizing: border-box; }
 
 #app .row {
   position: relative;
@@ -169,6 +170,36 @@ select:focus {
       border-radius: 0 5px 5px 0;
       border-right: 1px solid #949494; }
 
+.informationPanel {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #d3d3d3;
+  border-left: 4px solid #a4cc25;
+  padding-left: 10px; }
+
+.breadcrumbs {
+  position: relative;
+  list-style: none; }
+  .breadcrumbs li {
+    position: relative;
+    float: left;
+    color: #535353;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 20px; }
+    .breadcrumbs li a {
+      text-decoration: none;
+      color: #a4cc25; }
+    .breadcrumbs li:before {
+      content: '\\';
+      position: absolute;
+      left: 5px;
+      top: 0; }
+    .breadcrumbs li:first-child {
+      padding-left: 0; }
+      .breadcrumbs li:first-child:before {
+        content: ''; }
+
 #app .page.pageWinningResults .row.row_2 {
   margin-top: 40px; }
   #app .page.pageWinningResults .row.row_2 h1 {
@@ -224,7 +255,10 @@ select:focus {
       #app .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber.extra {
         border-color: #ca7f26; }
 #app .page.pageWinningResults .row .winnerCombinationsTable {
-  width: 70%;
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  width: 65%;
   border: 1px solid #d3d3d3;
   margin: 20px 0 0 0;
   border-collapse: collapse; }
@@ -236,5 +270,35 @@ select:focus {
     text-align: left;
     border-top: 1px solid #d3d3d3;
     padding: 10px 5px; }
+#app .page.pageWinningResults .row .informationPanels {
+  position: relative;
+  float: right;
+  width: calc(35% - 30px); }
+  #app .page.pageWinningResults .row .informationPanels .informationPanel {
+    position: relative;
+    margin: 20px 0 0 0;
+    padding: 20px; }
+    #app .page.pageWinningResults .row .informationPanels .informationPanel h4 {
+      margin-top: 0; }
+    #app .page.pageWinningResults .row .informationPanels .informationPanel p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 24px; }
+#app .page.pageWinningResults .row.row_5 {
+  background-color: #eaeaea; }
+
+footer .row.row_3 {
+  background-color: #d3d3d3;
+  padding: 20px;
+  box-sizing: border-box; }
+footer .row .siteLogo {
+  display: block;
+  position: relative;
+  text-align: center; }
+  footer .row .siteLogo img {
+    position: relative;
+    height: 40px;
+    margin-top: 10px;
+    filter: grayscale(100%); }
 
 /*# sourceMappingURL=style.css.map */

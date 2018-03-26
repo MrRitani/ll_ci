@@ -185,6 +185,30 @@ const WinnerCombinationsTable = (props) => {
 };
 
 //-----END WINNER COMBINATIONS TABLE------------------------------------------------------------------------------------
+//-----INFORMATION PANEL------------------------------------------------------------------------------------------------
+
+const InformationPanel = (props) => (
+	<div className="informationPanel">
+
+		<h4>{props.title}</h4>
+		<p>{props.children}</p>
+
+	</div>
+);
+
+//-----END INFORMATION PANEL--------------------------------------------------------------------------------------------
+//-----BREADCRUMBS------------------------------------------------------------------------------------------------------
+
+const Breadcrumbs = (props) => (
+
+		<ol className="breadcrumbs">
+			<li><a href="#">Lottoland</a></li>
+			<li><a href="#">EuroJackpot</a></li>
+			<li>EuroJackpot Results &amp; Winning Numbers</li>
+		</ol>
+);
+
+//-----END BREADCRUMBS--------------------------------------------------------------------------------------------------
 //-----HEADER-----------------------------------------------------------------------------------------------------------
 
 const Header = (props) => (
@@ -259,12 +283,25 @@ const Page = (props) => {
 				{/*results*/}
 				<WinnerCombinationsTable />
 
-				{/*information panel */}
-				{/*information panel 2*/}
+				<div className="informationPanels">
+
+                    {/*information panel */}
+					<InformationPanel title="EuroJackpot numbers for 23.03.2018">The 314th draw for the EuroJackpot was held on 23.03.2018, as usual at 9pm in Helsinki.</InformationPanel>
+
+
+                    {/*information panel 2*/}
+					<InformationPanel title="The EuroJackpot numbers for 23.03.2018">The balls used for the draw are made of a synthetic polymer, softer than ping-pong balls. The results are broadcast after the draw, with the draw-machines independently checked by the VTT Technical Research Center of Finland.<br/>Lottoland published the draw results immediately after the draw on 23.03.2018. You can easily check your tickets here at Lottoland, or purchase your ticket for the next draw.</InformationPanel>
+
+
+				</div>
+
 			</div>
 
-			<div className="row row_5">
-				{/*breadcrumbs*/}
+			<div className="row row_5 full_width">
+				<div className="row row_5_1">
+                    {/*breadcrumbs*/}
+					<Breadcrumbs />
+				</div>
 			</div>
 
 		</div>
@@ -285,8 +322,12 @@ const Footer = (props) => (
             {/*grid lists links*/}
 		</div>
 
-		<div className="row row_3">
-            {/*site logo*/}
+		<div className="row row_3 full_width">
+			<div className="row row_3_1">
+                {/*site logo*/}
+				<SiteLogo link="#" />
+			</div>
+
             {/*site rewards*/}
 		</div>
 
