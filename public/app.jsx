@@ -1,3 +1,12 @@
+//-----DATA-------------------------------------------------------------------------------------------------------------
+
+function dataFromLottoland(){
+    //I can't receive this data via ajax because "No 'Access-Control-Allow-Origin' header is present on the requested resource"
+    let lastResultsJson = '{"last":{"nr":314,"currency":"EUR","date":{"full":"Die Lottozahlen vom Freitag, den 23.03.2018","day":23,"month":3,"year":2018,"hour":21,"minute":0,"dayOfWeek":"Freitag"},"closingDate":"23.03.2018, 19:00","lateClosingDate":"23.03.2018, 20:15","drawingDate":"23.03.2018, 21:00","numbers":[4,14,22,33,42],"euroNumbers":[1,10],"jackpot":"17","marketingJackpot":"17","specialMarketingJackpot":"17","climbedSince":2,"Winners":584750,"odds":{"rank0":{"winners":0,"specialPrize":0,"prize":0},"rank1":{"winners":1,"specialPrize":0,"prize":1746147880},"rank2":{"winners":7,"specialPrize":0,"prize":42522060},"rank3":{"winners":8,"specialPrize":0,"prize":6705160},"rank8":{"winners":21688,"specialPrize":0,"prize":2550},"rank9":{"winners":25671,"specialPrize":0,"prize":2080},"rank10":{"winners":63409,"specialPrize":0,"prize":1230},"rank4":{"winners":55,"specialPrize":0,"prize":325090},"rank5":{"winners":695,"specialPrize":0,"prize":23150},"rank6":{"winners":1860,"specialPrize":0,"prize":6750},"rank11":{"winners":112488,"specialPrize":0,"prize":1230},"rank7":{"winners":1581,"specialPrize":0,"prize":6750},"rank12":{"winners":357287,"specialPrize":0,"prize":950}}},"next":{"nr":315,"currency":"EUR","date":{"full":"Die Lottozahlen vom Freitag, den 30.03.2018","day":30,"month":3,"year":2018,"hour":21,"minute":0,"dayOfWeek":"Freitag"},"closingDate":"30.03.2018, 19:00","lateClosingDate":"30.03.2018, 20:15","drawingDate":"30.03.2018, 21:00","jackpot":"10","marketingJackpot":"10","specialMarketingJackpot":"10","climbedSince":1}}';
+    return JSON.parse(lastResultsJson);
+}
+
+//-----END DATA---------------------------------------------------------------------------------------------------------
 //-----SITELOGO---------------------------------------------------------------------------------------------------------
 
 const SiteLogo = (props) => {
@@ -141,6 +150,41 @@ const WinnerCombination = (props) => (
 );
 
 //-----END WINNER COMBINATION-------------------------------------------------------------------------------------------
+//-----WINNER COMBINATIONS TABLE----------------------------------------------------------------------------------------
+
+const WinnerCombinationsTableRow = (props) => (
+	<div></div>
+);
+
+const WinnerCombinationsTable = (props) => {
+
+	//I can't receive this data via ajax because "No 'Access-Control-Allow-Origin' header is present on the requested resource"
+	let lastResults = dataFromLottoland()
+	console.log(lastResults);
+
+    return (
+    	<table className="winnerCombinationsTable">
+			<tr>
+				<th>Tier</th>
+				<th>Match</th>
+				<th>Winners</th>
+				<th>Amount</th>
+			</tr>
+
+			<tr>
+				<td>none</td>
+				<td>none</td>
+				<td>none</td>
+				<td>none</td>
+			</tr>
+		</table>
+
+	)
+
+
+};
+
+//-----END WINNER COMBINATIONS TABLE------------------------------------------------------------------------------------
 //-----HEADER-----------------------------------------------------------------------------------------------------------
 
 const Header = (props) => (
@@ -171,54 +215,61 @@ const Header = (props) => (
 //-----END HEADER-------------------------------------------------------------------------------------------------------
 //-----PAGE-------------------------------------------------------------------------------------------------------------
 
-const Page = (props) => (
-	<div className="page pageWinningResults">
+const Page = (props) => {
+    let lastResults = dataFromLottoland()
 
-		<div className="row row_1">
-			{/*secondary nav*/}
-			<SecondaryNav />
+
+	return(
+		<div className="page pageWinningResults">
+
+			<div className="row row_1">
+				{/*secondary nav*/}
+				<SecondaryNav />
+			</div>
+
+			<div className="row row_2">
+				{/* title*/}
+				<h1 className="sectionTitle">EUROJACKPOT RESULTS & WINNING NUMBERS</h1>
+
+				<ResultsLotteryDaySelector />
+
+				<br className="clear" />
+				{/*<hr />*/}
+			</div>
+
+
+			<div className="row row_3">
+				{/*results title*/}
+				<h2 className="sectionTitle">EuroJackpot Results for <span>{lastResults.last.date['dayOfWeek']} {lastResults.last.date['day']} {lastResults.last.date['month']} {lastResults.last.date['year']}</span></h2>
+
+				{/*main result*/}
+				<WinnerCombination
+					n1 = {lastResults.last.numbers[0]}
+					n2 = {lastResults.last.numbers[1]}
+					n3 = {lastResults.last.numbers[2]}
+					n4 = {lastResults.last.numbers[3]}
+					n5 = {lastResults.last.numbers[4]}
+					e1 = {lastResults.last.euroNumbers[0]}
+					e2 = {lastResults.last.euroNumbers[1]}
+				/>
+
+			</div>
+
+			<div className="row row_4">
+				{/*results*/}
+				<WinnerCombinationsTable />
+
+				{/*information panel */}
+				{/*information panel 2*/}
+			</div>
+
+			<div className="row row_5">
+				{/*breadcrumbs*/}
+			</div>
+
 		</div>
-
-		<div className="row row_2">
-            {/* title*/}
-            <h1 className="sectionTitle">EUROJACKPOT RESULTS & WINNING NUMBERS</h1>
-
-			<ResultsLotteryDaySelector />
-
-			<br className="clear" />
-			{/*<hr />*/}
-		</div>
-
-
-		<div className="row row_3">
-            {/*results title*/}
-			<h2 className="sectionTitle">EuroJackpot Results for <span>Friday 23 Mar 2018</span></h2>
-
-            {/*main result*/}
-			<WinnerCombination
-				n1 = "2"
-				n2 = "4"
-				n3 = "13"
-				n4 = "2"
-				n5 = "15"
-				e1 = "3"
-				e2 = "2"
-			/>
-
-		</div>
-
-		<div className="row row_4">
-            {/*results*/}
-            {/*information panel */}
-            {/*information panel 2*/}
-		</div>
-
-		<div className="row row_5">
-            {/*breadcrumbs*/}
-		</div>
-
-	</div>
-);
+	)
+};
 
 //-----END PAGE---------------------------------------------------------------------------------------------------------
 //-----FOOTER-----------------------------------------------------------------------------------------------------------

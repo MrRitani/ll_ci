@@ -204,6 +204,8 @@ select:focus {
     font-weight: 400;
     color: white;
     cursor: default; }
+    #app .page.pageWinningResults .row.row_3 h2 span {
+      color: #012406; }
   #app .page.pageWinningResults .row.row_3 .winnerCombination {
     position: relative;
     float: right;
@@ -211,12 +213,28 @@ select:focus {
     #app .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber {
       display: inline-block;
       line-height: 30px;
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
+      border: 1px solid #d3d3d3;
       background-color: white;
       margin: 0 5px;
       border-radius: 50px;
       text-align: center;
       font-weight: 600; }
+      #app .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber.extra {
+        border-color: #ca7f26; }
+#app .page.pageWinningResults .row .winnerCombinationsTable {
+  width: 70%;
+  border: 1px solid #d3d3d3;
+  margin: 20px 0 0 0;
+  border-collapse: collapse; }
+  #app .page.pageWinningResults .row .winnerCombinationsTable th {
+    text-align: left;
+    padding: 0 0 0 5px;
+    line-height: 40px; }
+  #app .page.pageWinningResults .row .winnerCombinationsTable td {
+    text-align: left;
+    border-top: 1px solid #d3d3d3;
+    padding: 10px 5px; }
 
 /*# sourceMappingURL=style.css.map */

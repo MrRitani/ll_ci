@@ -378,6 +378,11 @@ select{
             font-weight: 400;
             color: white;
             cursor: default;
+
+            span{
+              color: $c_green_10;
+            }
+
           }
 
           .winnerCombination{
@@ -388,15 +393,42 @@ select{
             .lotteryNumber{
               display: inline-block;
               line-height: 30px;
-              width: 30px;
-              height: 30px;
+              width: 28px;
+              height: 28px;
+              border: 1px solid $c_grey_100;
               background-color: white;
               margin: 0 5px;
               border-radius: 50px;
               text-align: center;
               font-weight: 600;
+
+              &.extra{
+                border-color: $c_gold_100;
+              }
+
             }
 
+          }
+
+        }
+
+
+        .winnerCombinationsTable{
+          width: 70%;
+          border: 1px solid $c_grey_100;
+          margin: 20px 0 0 0;
+          border-collapse: collapse;
+
+          th{
+            text-align: left;
+            padding: 0 0 0 5px;
+            line-height: 40px;
+          }
+
+          td{
+            text-align: left;
+            border-top: 1px solid $c_grey_100;
+            padding: 10px 5px;
           }
 
         }
