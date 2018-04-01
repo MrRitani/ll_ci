@@ -43,6 +43,7 @@ const EuroJackPot_results = (props) => {
                         n3 = {dataFromLottoland.last.numbers[2]}
                         n4 = {dataFromLottoland.last.numbers[3]}
                         n5 = {dataFromLottoland.last.numbers[4]}
+
                         e1 = {dataFromLottoland.last.euroNumbers[0]}
                         e2 = {dataFromLottoland.last.euroNumbers[1]}
                     />
@@ -54,9 +55,9 @@ const EuroJackPot_results = (props) => {
 
                     <div className="informationPanels">
 
-                        <InformationPanel title="EuroJackpot numbers for 23.03.2018">The 314th draw for the EuroJackpot was held on 23.03.2018, as usual at 9pm in Helsinki.</InformationPanel>
+                        <InformationPanel title="The EuroJackpot numbers for 30.03.2018">The 315th draw for the EuroJackpot was held on 30.03.2018, as usual at 9pm in Helsinki.</InformationPanel>
 
-                        <InformationPanel title="The EuroJackpot numbers for 23.03.2018">The balls used for the draw are made of a synthetic polymer, softer than ping-pong balls. The results are broadcast after the draw, with the draw-machines independently checked by the VTT Technical Research Center of Finland.<br/>Lottoland published the draw results immediately after the draw on 23.03.2018. You can easily check your tickets here at Lottoland, or purchase your ticket for the next draw.</InformationPanel>
+                        <InformationPanel title="EuroJackpot numbers for 30.03.2018">The balls used for the draw are made of a synthetic polymer, softer than ping-pong balls. The results are broadcast after the draw, with the draw-machines independently checked by the VTT Technical Research Center of Finland. <br /><br />Lottoland published the draw results immediately after the draw on 30.03.2018. You can easily check your tickets here at Lottoland, or purchase your ticket for the next draw.</InformationPanel>
 
 
                     </div>

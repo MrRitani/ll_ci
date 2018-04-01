@@ -116,6 +116,7 @@ select:focus {
   text-align: center;
   list-style: none; }
   #root .primaryNav li {
+    position: relative;
     display: inline-block; }
     #root .primaryNav li a {
       display: block;
@@ -126,6 +127,17 @@ select:focus {
       text-decoration: none;
       font-weight: 900;
       transition: 0.4s background-color ease; }
+      #root .primaryNav li a span {
+        display: block;
+        position: absolute;
+        top: -6px;
+        left: 3%;
+        width: 94%;
+        font-size: 9px;
+        line-height: 12px;
+        background-color: #9d196b;
+        border-radius: 3px;
+        text-transform: uppercase; }
       #root .primaryNav li a:visited {
         color: white; }
       #root .primaryNav li a:hover {
@@ -253,6 +265,10 @@ select:focus {
       text-align: center;
       font-weight: 600; }
       #root .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber.extra {
+        line-height: 28px;
+        width: 26px;
+        height: 26px;
+        border: 2px solid #d3d3d3;
         border-color: #ca7f26; }
 #root .page.pageWinningResults .row .winnerCombinationsTable {
   position: relative;
