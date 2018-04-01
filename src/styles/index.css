@@ -9,14 +9,14 @@ body {
   cursor: default;
   box-sizing: border-box; }
 
-#app .row {
+#root .row {
   position: relative;
   margin: 0 auto;
   width: 100%;
   max-width: 960px; }
-  #app .row.full_width {
+  #root .row.full_width {
     max-width: 100%; }
-  #app .row:after {
+  #root .row:after {
     content: '';
     display: block;
     clear: both; }
@@ -53,31 +53,31 @@ hr {
 select:focus {
   outline: none; }
 
-#app header {
+#root header {
   position: relative;
   padding: 5px 0; }
-  #app header .siteLogo {
+  #root header .siteLogo {
     display: block;
     position: relative;
     float: left; }
-    #app header .siteLogo img {
+    #root header .siteLogo img {
       position: relative;
       height: 40px;
       margin-top: 10px; }
-  #app header .headerBanner {
+  #root header .headerBanner {
     position: relative;
     float: left;
     margin-left: 30px;
     text-decoration: none;
     color: #012406;
     transition: 0.4s color ease; }
-    #app header .headerBanner img {
+    #root header .headerBanner img {
       position: relative;
       float: left;
       height: 56px;
       width: 56px;
       margin-right: 20px; }
-    #app header .headerBanner p {
+    #root header .headerBanner p {
       position: relative;
       padding: 0;
       margin: 0;
@@ -86,38 +86,38 @@ select:focus {
       line-height: 18px;
       font-size: 13px;
       transition: 0.4s color ease; }
-    #app header .headerBanner div {
+    #root header .headerBanner div {
       position: relative;
       font-size: 12px;
       color: #a4cc25;
       transition: 0.4s color ease; }
-    #app header .headerBanner:after {
+    #root header .headerBanner:after {
       content: '';
       display: block;
       clear: both; }
-    #app header .headerBanner:hover p {
+    #root header .headerBanner:hover p {
       color: #64a407; }
-    #app header .headerBanner:hover div {
+    #root header .headerBanner:hover div {
       color: #64a407; }
-  #app header .userNav {
+  #root header .userNav {
     position: relative;
     float: right; }
-    #app header .userNav .btn {
+    #root header .userNav .btn {
       margin-top: 20px; }
-  #app header .row_2 {
+  #root header .row_2 {
     margin-top: 10px;
     background-image: linear-gradient(90deg, #a4cc25, #64a407); }
 
-#app .primaryNav {
+#root .primaryNav {
   display: block;
   position: relative;
   padding: 0;
   margin: 0;
   text-align: center;
   list-style: none; }
-  #app .primaryNav li {
+  #root .primaryNav li {
     display: inline-block; }
-    #app .primaryNav li a {
+    #root .primaryNav li a {
       display: block;
       padding: 10px 20px;
       line-height: 20px;
@@ -126,25 +126,25 @@ select:focus {
       text-decoration: none;
       font-weight: 900;
       transition: 0.4s background-color ease; }
-      #app .primaryNav li a:visited {
+      #root .primaryNav li a:visited {
         color: white; }
-      #app .primaryNav li a:hover {
+      #root .primaryNav li a:hover {
         background-color: #c3dc41; }
-    #app .primaryNav li.selected a {
+    #root .primaryNav li.selected a {
       background-color: #c3dc41;
       cursor: default; }
 
-#app .secondaryNav {
+#root .secondaryNav {
   display: block;
   position: relative;
   padding: 0;
   margin: 20px 0 0 0;
   text-align: center;
   list-style: none; }
-  #app .secondaryNav li {
+  #root .secondaryNav li {
     display: inline-block;
     min-width: 33.33%; }
-    #app .secondaryNav li a {
+    #root .secondaryNav li a {
       display: block;
       padding: 10px 20px;
       line-height: 20px;
@@ -155,18 +155,18 @@ select:focus {
       transition: 0.4s background-color ease;
       border-top: 1px solid #949494;
       border-bottom: 1px solid #949494; }
-      #app .secondaryNav li a:visited {
+      #root .secondaryNav li a:visited {
         color: #535353; }
-      #app .secondaryNav li a:hover {
+      #root .secondaryNav li a:hover {
         background-color: #c3dc41; }
-    #app .secondaryNav li.selected a {
+    #root .secondaryNav li.selected a {
       background-color: #c3dc41;
       color: white;
       cursor: default; }
-    #app .secondaryNav li:first-child a {
+    #root .secondaryNav li:first-child a {
       border-radius: 5px 0 0 5px;
       border-left: 1px solid #949494; }
-    #app .secondaryNav li:last-child a {
+    #root .secondaryNav li:last-child a {
       border-radius: 0 5px 5px 0;
       border-right: 1px solid #949494; }
 
@@ -200,17 +200,17 @@ select:focus {
       .breadcrumbs li:first-child:before {
         content: ''; }
 
-#app .page.pageWinningResults .row.row_2 {
+#root .page.pageWinningResults .row.row_2 {
   margin-top: 40px; }
-  #app .page.pageWinningResults .row.row_2 h1 {
+  #root .page.pageWinningResults .row.row_2 h1 {
     float: left;
     margin: 0;
     font-size: 20px;
     line-height: 40px; }
-  #app .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector {
+  #root .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector {
     float: right;
     line-height: 40px; }
-    #app .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector select {
+    #root .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector select {
       position: relative;
       margin-left: 20px;
       line-height: 30px;
@@ -220,13 +220,13 @@ select:focus {
       cursor: pointer;
       font-size: 16px;
       padding: 0 10px; }
-#app .page.pageWinningResults .row.row_3 {
+#root .page.pageWinningResults .row.row_3 {
   position: relative;
   box-sizing: border-box;
   background-color: #a4cc25;
   padding: 20px;
   margin-top: 10px; }
-  #app .page.pageWinningResults .row.row_3 h2 {
+  #root .page.pageWinningResults .row.row_3 h2 {
     float: left;
     font-size: 18px;
     line-height: 30px;
@@ -235,13 +235,13 @@ select:focus {
     font-weight: 400;
     color: white;
     cursor: default; }
-    #app .page.pageWinningResults .row.row_3 h2 span {
+    #root .page.pageWinningResults .row.row_3 h2 span {
       color: #012406; }
-  #app .page.pageWinningResults .row.row_3 .winnerCombination {
+  #root .page.pageWinningResults .row.row_3 .winnerCombination {
     position: relative;
     float: right;
     text-align: right; }
-    #app .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber {
+    #root .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber {
       display: inline-block;
       line-height: 30px;
       width: 28px;
@@ -252,9 +252,9 @@ select:focus {
       border-radius: 50px;
       text-align: center;
       font-weight: 600; }
-      #app .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber.extra {
+      #root .page.pageWinningResults .row.row_3 .winnerCombination .lotteryNumber.extra {
         border-color: #ca7f26; }
-#app .page.pageWinningResults .row .winnerCombinationsTable {
+#root .page.pageWinningResults .row .winnerCombinationsTable {
   position: relative;
   float: left;
   box-sizing: border-box;
@@ -262,29 +262,29 @@ select:focus {
   border: 1px solid #d3d3d3;
   margin: 20px 0 0 0;
   border-collapse: collapse; }
-  #app .page.pageWinningResults .row .winnerCombinationsTable th {
+  #root .page.pageWinningResults .row .winnerCombinationsTable th {
     text-align: left;
     padding: 0 0 0 5px;
     line-height: 40px; }
-  #app .page.pageWinningResults .row .winnerCombinationsTable td {
+  #root .page.pageWinningResults .row .winnerCombinationsTable td {
     text-align: left;
     border-top: 1px solid #d3d3d3;
     padding: 10px 5px; }
-#app .page.pageWinningResults .row .informationPanels {
+#root .page.pageWinningResults .row .informationPanels {
   position: relative;
   float: right;
   width: calc(35% - 30px); }
-  #app .page.pageWinningResults .row .informationPanels .informationPanel {
+  #root .page.pageWinningResults .row .informationPanels .informationPanel {
     position: relative;
     margin: 20px 0 0 0;
     padding: 20px; }
-    #app .page.pageWinningResults .row .informationPanels .informationPanel h4 {
+    #root .page.pageWinningResults .row .informationPanels .informationPanel h4 {
       margin-top: 0; }
-    #app .page.pageWinningResults .row .informationPanels .informationPanel p {
+    #root .page.pageWinningResults .row .informationPanels .informationPanel p {
       margin: 0;
       font-size: 14px;
       line-height: 24px; }
-#app .page.pageWinningResults .row.row_5 {
+#root .page.pageWinningResults .row.row_5 {
   background-color: #eaeaea; }
 
 footer .row.row_3 {
@@ -301,4 +301,4 @@ footer .row .siteLogo {
     margin-top: 10px;
     filter: grayscale(100%); }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */
