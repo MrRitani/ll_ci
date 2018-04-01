@@ -1,6 +1,30 @@
 @import 'variables';
 @import 'colors';
 
+//-----MEDIA------------------------------------------------------------------------------------------------------------
+
+$m350:  "only screen and (max-width: 350px)";
+$m400:  "only screen and (max-width: 400px)";
+$m660:  "only screen and (max-width: 660px)";
+$m768:  "only screen and (max-width: 768px)";
+$m960:  "only screen and (max-width: 960px)";
+$m1024: "only screen and (max-width: 1024px)";
+$m1200: "only screen and (max-width: 1200px)";
+
+.hide_on_768 {
+
+  @media #{$m768} {
+    display: none !important;
+  }
+
+  //@media #{$m960} {
+  //  width: 50% !important;
+  //  margin: 0 !important;
+  //}
+
+}
+
+//-----END MEDIA--------------------------------------------------------------------------------------------------------
 //-----FONTS------------------------------------------------------------------------------------------------------------
 
 // Google Fonts
@@ -31,8 +55,19 @@ body{
     width: 100%;
     max-width: $basic_document_width;
 
+    @media #{$m960} {
+      margin: 0 2%;
+      width: auto;
+    }
+
     &.full_width{
       max-width: 100%;
+
+      @media #{$m960} {
+        margin: 0 0;
+        width: auto;
+      }
+
     }
 
     &:after {
@@ -41,63 +76,64 @@ body{
       clear: both;
     }
 
+
   }
 
-}
+  .btn{
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: $c_green_99;
+    line-height: 20px;
+    transition: 0.4s color ease;
 
-.btn{
-  position: relative;
-  font-size: 14px;
-  font-weight: 600;
-  color: $c_green_99;
-  line-height: 20px;
-  transition: 0.4s color ease;
-
-  &:hover{
-    color: $c_green_101;
-  }
-
-  //-----Style Sets
-
-  &.styleSet_1{
-    display: inline-block;
-    padding: 0 0 0 20px;
-    margin: 10px 0 10px 20px;
-    border-left: 1px solid lightgray;
-    text-decoration: none;
-
-    &:first-child{
-      border-left: 0;
+    &:hover{
+      color: $c_green_101;
     }
 
+    //-----Style Sets
+
+    &.styleSet_1{
+      display: inline-block;
+      padding: 0 0 0 20px;
+      margin: 10px 0 10px 20px;
+      border-left: 1px solid lightgray;
+      text-decoration: none;
+
+      &:first-child{
+        border-left: 0;
+      }
+
+    }
+
+    &.styleSet_2{
+
+    }
+
+    //-----END Style Sets
+
   }
 
-  &.styleSet_2{
-
+  .sectionTitle{
+    font-weight: 900;
+    font-size: 20px;
   }
 
-  //-----END Style Sets
+  hr{
+    border: 0;
+    border-top: 1px solid $c_grey_100;
+  }
 
-}
+  .clear{
+    clear: both;
+  }
 
-.sectionTitle{
-  font-weight: 900;
-  font-size: 20px;
-}
+  select{
 
-hr{
-  border: 0;
-  border-top: 1px solid $c_grey_100;
-}
+    &:focus{
+      outline: none;
+    }
 
-.clear{
-  clear: both;
-}
-
-select{
-
-  &:focus{
-    outline: none;
   }
 
 }
@@ -105,12 +141,16 @@ select{
 //-----END GLOBALS------------------------------------------------------------------------------------------------------
 //-----Header-----------------------------------------------------------------------------------------------------------
 
-
 #{$app_name}{
 
   header{
-    position: relative;
-    padding: 5px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 30;
+    width: 100%;
+    padding: 5px 0 0 0;
+    background-color: white;
 
     .siteLogo{
       display: block;
@@ -194,6 +234,10 @@ select{
       background-image: linear-gradient(90deg, $c_green_100, $c_green_99);
     }
 
+  }
+
+  .header_spacer{
+    min-height: 120px;
   }
 
 }
@@ -339,53 +383,125 @@ select{
 //-----END secondaryNav-------------------------------------------------------------------------------------------------
 //-----InformationPanel-------------------------------------------------------------------------------------------------
 
-.informationPanel{
-  position: relative;
-  box-sizing: border-box;
-  border: 1px solid $c_grey_100;
-  border-left: 4px solid $c_green_100;
-  padding-left: 10px;
+#{$app_name} {
+
+  .informationPanel{
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid $c_grey_100;
+    border-left: 4px solid $c_green_100;
+    padding-left: 10px;
+  }
 }
+
 
 //-----END InformationPanel---------------------------------------------------------------------------------------------
 //-----Breadcrumbs------------------------------------------------------------------------------------------------------
 
-.breadcrumbs{
-  position: relative;
-  list-style: none;
+#{$app_name} {
 
-  li{
+  .breadcrumbs{
     position: relative;
-    float: left;
-    color: $c_grey_10;
-    padding-left: 20px;
-    font-size: 14px;
-    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0 10px 0;
 
-    a{
-      text-decoration: none;
-      color: $c_green_100;
-    }
+    li{
+      position: relative;
+      float: left;
+      color: $c_grey_10;
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 20px;
 
-    &:before{
-      content: '\\';
-      position: absolute;
-      left: 5px;
-      top: 0;
-    }
-
-    &:first-child{
-      padding-left: 0;
+      a{
+        text-decoration: none;
+        color: $c_green_100;
+      }
 
       &:before{
-        content: '';
+        content: '\\';
+        position: absolute;
+        left: 5px;
+        top: 0;
+      }
+
+      &:first-child{
+        padding-left: 0;
+
+        &:before{
+          content: '';
+        }
+      }
+
+    }
+  }
+
+}
+//-----END Breadcrumbs--------------------------------------------------------------------------------------------------
+//-----trustGrid--------------------------------------------------------------------------------------------------------
+
+#{$app_name}{
+
+  .trustGrid{
+    position: relative;
+    text-align: center;
+    min-height: 100px;
+    padding: 0;
+
+    li{
+      width: 20%;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+
+      img{
+        max-width: 100px;
       }
     }
 
+
+
   }
+
 }
 
-//-----END Breadcrumbs--------------------------------------------------------------------------------------------------
+//-----END trustGrid----------------------------------------------------------------------------------------------------
+//-----paymentGrid------------------------------------------------------------------------------------------------------
+
+#{$app_name}{
+
+  .paymentGrid{
+    position: relative;
+    margin: 20px 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100px;
+    border: 1px solid $c_grey_100;
+    display: flex;
+    list-style: none;
+
+    li{
+      width: 20%;
+      vertical-align: baseline;
+      text-align: center;
+      justify-content: center;
+      align-self: center;
+
+      img{
+        display: inline;
+        max-width: 100px;
+        height: auto;
+      }
+    }
+
+
+
+  }
+
+}
+
+//-----END paymentGrid--------------------------------------------------------------------------------------------------
 //-----scenes/EuroJackPot_results---------------------------------------------------------------------------------------
 
 #{$app_name}{
@@ -531,6 +647,11 @@ select{
         //Breadcrumbs row
         &.row_5{
           background-color: $c_grey_110;
+
+          .row_5_1{
+            margin-top: 20px;
+          }
+
         }
 
       }
@@ -544,29 +665,53 @@ select{
 //-----END scenes/EuroJackPot_results-----------------------------------------------------------------------------------
 //-----Footer-----------------------------------------------------------------------------------------------------------
 
-footer{
+#{$app_name}{
 
-  .row{
+  footer{
+    background-color: $c_grey_120;
 
-    //Lottoland logo
-    &.row_3{
-      background-color: $c_grey_100;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+    .row{
 
-
-    .siteLogo{
-      display: block;
-      position: relative;
-      text-align: center;
-
-      img{
-        position: relative;
-        height: 40px;
-        margin-top: 10px;
-        filter: grayscale(100%);
+      //Lottoland logo
+      &.row_1{
+        padding: 20px;
+        box-sizing: border-box;
       }
+
+      &.row_2{
+        padding-bottom: 100px;
+
+        p{
+          color: $c_grey_50;
+          font-size: 13px;
+          line-height: 20px;
+          text-align: center;
+          padding: 20px 0 0 0;
+
+          a{
+            color: $c_green_99;
+            font-weight: 900;
+            text-decoration: none;
+          }
+
+        }
+
+      }
+
+
+      .siteLogo{
+        display: block;
+        position: relative;
+        text-align: center;
+
+        img{
+          position: relative;
+          height: 40px;
+          margin-top: 10px;
+          filter: grayscale(100%);
+        }
+      }
+
     }
 
   }

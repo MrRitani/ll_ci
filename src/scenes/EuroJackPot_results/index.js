@@ -9,6 +9,8 @@ import WinnerCombination from '../../components/WinnerCombination/index.js';
 import WinnerCombinationsTable from '../../components/WinnerCombinationsTable/index.js';
 import InformationPanel from '../../components/InformationPanel/index.js';
 import Breadcrumbs from '../../components/Breadcrumbs/index.js';
+import TrustGrid from '../../components/TrustGrid/index.js';
+import PaymentGrid from '../../components/PaymentGrid/index.js';
 
 const EuroJackPot_results = (props) => {
 
@@ -68,7 +70,19 @@ const EuroJackPot_results = (props) => {
                     <div className="row row_5_1">
                         <Breadcrumbs />
                     </div>
+
+                    <div className="row row_5_2">
+                        <TrustGrid />
+                    </div>
                 </div>
+
+                <div className="row row_6">
+
+                    <div className="row row_6_1">
+                        <PaymentGrid />
+                    </div>
+                </div>
+
 
             </div>
 
