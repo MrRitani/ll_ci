@@ -4,61 +4,73 @@
     display: none !important; } }
 
 body {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 100vw;
   height: 100vh;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
   font-family: "Roboto", serif;
   cursor: default;
   box-sizing: border-box; }
 
-#root .row {
+#root {
   position: relative;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 960px; }
-  @media only screen and (max-width: 960px) {
-    #root .row {
-      margin: 0 2%;
-      width: auto; } }
-  #root .row.full_width {
-    max-width: 100%; }
+  width: 100vw;
+  overflow-x: hidden; }
+  #root .row {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px; }
     @media only screen and (max-width: 960px) {
-      #root .row.full_width {
-        margin: 0 0;
+      #root .row {
+        margin: 0 2%;
         width: auto; } }
-  #root .row:after {
-    content: '';
-    display: block;
+    #root .row.full_width {
+      max-width: 100%; }
+      @media only screen and (max-width: 960px) {
+        #root .row.full_width {
+          margin: 0 0;
+          width: auto; } }
+    #root .row:after {
+      content: '';
+      display: block;
+      clear: both; }
+  #root .btn {
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64a407;
+    line-height: 20px;
+    transition: 0.4s color ease; }
+    #root .btn:hover {
+      color: #c3dc41; }
+    #root .btn.styleSet_1 {
+      display: inline-block;
+      padding: 0 0 0 20px;
+      margin: 10px 0 10px 20px;
+      border-left: 1px solid lightgray;
+      text-decoration: none; }
+      #root .btn.styleSet_1:first-child {
+        border-left: 0; }
+  #root .sectionTitle {
+    font-weight: 900;
+    font-size: 20px; }
+    @media only screen and (max-width: 768px) {
+      #root .sectionTitle {
+        font-size: 16px;
+        text-align: center; } }
+  #root hr {
+    border: 0;
+    border-top: 1px solid #d3d3d3; }
+  #root .clear {
     clear: both; }
-#root .btn {
-  position: relative;
-  font-size: 14px;
-  font-weight: 600;
-  color: #64a407;
-  line-height: 20px;
-  transition: 0.4s color ease; }
-  #root .btn:hover {
-    color: #c3dc41; }
-  #root .btn.styleSet_1 {
-    display: inline-block;
-    padding: 0 0 0 20px;
-    margin: 10px 0 10px 20px;
-    border-left: 1px solid lightgray;
-    text-decoration: none; }
-    #root .btn.styleSet_1:first-child {
-      border-left: 0; }
-#root .sectionTitle {
-  font-weight: 900;
-  font-size: 20px; }
-#root hr {
-  border: 0;
-  border-top: 1px solid #d3d3d3; }
-#root .clear {
-  clear: both; }
-#root select:focus {
-  outline: none; }
+  #root select:focus {
+    outline: none; }
 
 #root header {
   position: fixed;
@@ -119,8 +131,16 @@ body {
   #root header .row_2 {
     margin-top: 10px;
     background-image: linear-gradient(90deg, #a4cc25, #64a407); }
+  @media only screen and (max-width: 960px) {
+    #root header {
+      position: relative; }
+      #root header .row_1 {
+        margin-bottom: 10px; } }
 #root .header_spacer {
   min-height: 120px; }
+  @media only screen and (max-width: 960px) {
+    #root .header_spacer {
+      display: none !important; } }
 
 #root .primaryNav {
   display: block;
@@ -156,9 +176,18 @@ body {
         color: white; }
       #root .primaryNav li a:hover {
         background-color: #c3dc41; }
+      @media only screen and (max-width: 960px) {
+        #root .primaryNav li a {
+          font-size: 10px; } }
+      @media only screen and (max-width: 768px) {
+        #root .primaryNav li a {
+          font-size: 12px; } }
     #root .primaryNav li.selected a {
       background-color: #c3dc41;
       cursor: default; }
+    @media only screen and (max-width: 768px) {
+      #root .primaryNav li {
+        min-width: 25%; } }
 
 #root .secondaryNav {
   display: block;
@@ -195,6 +224,24 @@ body {
     #root .secondaryNav li:last-child a {
       border-radius: 0 5px 5px 0;
       border-right: 1px solid #949494; }
+    @media only screen and (max-width: 960px) {
+      #root .secondaryNav li {
+        min-width: 30%; } }
+    @media only screen and (max-width: 768px) {
+      #root .secondaryNav li {
+        min-width: auto; } }
+    @media only screen and (max-width: 660px) {
+      #root .secondaryNav li {
+        position: relative;
+        display: block; }
+        #root .secondaryNav li a {
+          box-sizing: border-box;
+          width: 100%;
+          text-align: center;
+          padding: 0 1%;
+          border: 0 !important;
+          border-radius: 0 !important;
+          background-color: #f5f5f5; } }
 
 #root .informationPanel {
   position: relative;
@@ -249,25 +296,35 @@ body {
   min-height: 100px;
   border: 1px solid #d3d3d3;
   display: flex;
+  flex-wrap: wrap;
   list-style: none; }
   #root .paymentGrid li {
     width: 20%;
     vertical-align: baseline;
     text-align: center;
     justify-content: center;
-    align-self: center; }
+    align-self: center;
+    flex-basis: auto;
+    flex-grow: 1; }
     #root .paymentGrid li img {
       display: inline;
       max-width: 100px;
       height: auto; }
+    @media only screen and (max-width: 768px) {
+      #root .paymentGrid li {
+        min-width: 200px;
+        width: 200px; } }
 
 #root .page.pageWinningResults .row.row_2 {
   margin-top: 40px; }
   #root .page.pageWinningResults .row.row_2 h1 {
     float: left;
     margin: 0;
-    font-size: 20px;
     line-height: 40px; }
+    @media only screen and (max-width: 768px) {
+      #root .page.pageWinningResults .row.row_2 h1 {
+        float: none;
+        line-height: 20px; } }
   #root .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector {
     float: right;
     line-height: 40px; }
@@ -281,6 +338,18 @@ body {
       cursor: pointer;
       font-size: 16px;
       padding: 0 10px; }
+    @media only screen and (max-width: 768px) {
+      #root .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector {
+        float: none;
+        width: 100%;
+        line-height: 20px;
+        margin-top: 20px; }
+        #root .page.pageWinningResults .row.row_2 .resultsLotteryDaySelector select {
+          margin: 0 2%;
+          width: 46%; } }
+  @media only screen and (max-width: 768px) {
+    #root .page.pageWinningResults .row.row_2 {
+      margin-top: 20px; } }
 #root .page.pageWinningResults .row.row_3 {
   position: relative;
   box-sizing: border-box;
@@ -298,6 +367,11 @@ body {
     cursor: default; }
     #root .page.pageWinningResults .row.row_3 h2 span {
       color: #012406; }
+    @media only screen and (max-width: 768px) {
+      #root .page.pageWinningResults .row.row_3 h2 {
+        float: none;
+        width: 100%;
+        text-align: center; } }
   #root .page.pageWinningResults .row.row_3 .winnerCombination {
     position: relative;
     float: right;
@@ -319,6 +393,11 @@ body {
         height: 26px;
         border: 2px solid #d3d3d3;
         border-color: #ca7f26; }
+    @media only screen and (max-width: 768px) {
+      #root .page.pageWinningResults .row.row_3 .winnerCombination {
+        float: none;
+        width: 100%;
+        text-align: center; } }
 #root .page.pageWinningResults .row .winnerCombinationsTable {
   position: relative;
   float: left;
@@ -335,6 +414,11 @@ body {
     text-align: left;
     border-top: 1px solid #d3d3d3;
     padding: 10px 5px; }
+  @media only screen and (max-width: 768px) {
+    #root .page.pageWinningResults .row .winnerCombinationsTable {
+      float: none;
+      width: 100%;
+      text-align: center; } }
 #root .page.pageWinningResults .row .informationPanels {
   position: relative;
   float: right;
@@ -349,6 +433,11 @@ body {
       margin: 0;
       font-size: 14px;
       line-height: 24px; }
+  @media only screen and (max-width: 768px) {
+    #root .page.pageWinningResults .row .informationPanels {
+      float: none;
+      width: 100%;
+      text-align: center; } }
 #root .page.pageWinningResults .row.row_5 {
   background-color: #eaeaea; }
   #root .page.pageWinningResults .row.row_5 .row_5_1 {

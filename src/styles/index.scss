@@ -37,9 +37,13 @@ $roboto-slab: 'Roboto', serif;
 //-----GLOBALS----------------------------------------------------------------------------------------------------------
 
 body{
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 100vw;
   height: 100vh;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
   font-family: $roboto-slab;
@@ -48,6 +52,9 @@ body{
 }
 
 #{$app_name}{
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
 
   .row{
     position: relative;
@@ -117,6 +124,12 @@ body{
   .sectionTitle{
     font-weight: 900;
     font-size: 20px;
+
+    @media #{$m768} {
+      font-size: 16px;
+      text-align: center;
+    }
+
   }
 
   hr{
@@ -234,10 +247,24 @@ body{
       background-image: linear-gradient(90deg, $c_green_100, $c_green_99);
     }
 
+    @media #{$m960} {
+      position: relative;
+
+      .row_1{
+        margin-bottom: 10px;
+      }
+
+    }
+
   }
 
   .header_spacer{
     min-height: 120px;
+
+    @media #{$m960} {
+      display: none !important;
+    }
+
   }
 
 }
@@ -292,6 +319,15 @@ body{
           background-color: $c_green_101;
         }
 
+
+        @media #{$m960} {
+          font-size: 10px;
+        }
+
+        @media #{$m768} {
+          font-size: 12px;
+        }
+
       }
 
       &.selected {
@@ -301,6 +337,11 @@ body{
           cursor: default;
         }
 
+      }
+
+
+      @media #{$m768} {
+        min-width: 25%;
       }
 
     }
@@ -372,6 +413,32 @@ body{
           border-radius: 0 5px 5px 0;
           border-right: 1px solid $c_grey_50;
         }
+      }
+
+      @media #{$m960} {
+        min-width: 30%;
+      }
+
+      @media #{$m768} {
+        min-width: auto;
+      }
+
+      @media #{$m660} {
+        position: relative;
+        display: block;
+
+        a{
+          box-sizing: border-box;
+          width: 100%;
+          text-align: center;
+          padding: 0 1%;
+          border: 0 !important;
+          border-radius: 0 !important;
+          background-color: $c_grey_120;
+
+
+        }
+
       }
 
     }
@@ -479,6 +546,7 @@ body{
     min-height: 100px;
     border: 1px solid $c_grey_100;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
 
     li{
@@ -487,15 +555,22 @@ body{
       text-align: center;
       justify-content: center;
       align-self: center;
+      flex-basis: auto;
+      flex-grow: 1;
 
       img{
         display: inline;
         max-width: 100px;
         height: auto;
       }
+
+
+      @media #{$m768} {
+        min-width: 200px;
+        width: 200px;
+      }
+
     }
-
-
 
   }
 
@@ -519,8 +594,13 @@ body{
           h1{
             float: left;
             margin: 0;
-            font-size: 20px;
             line-height: 40px;
+
+            @media #{$m768} {
+              float: none;
+              line-height: 20px;
+            }
+
           }
 
           .resultsLotteryDaySelector{
@@ -539,6 +619,22 @@ body{
               padding: 0 10px;
             }
 
+            @media #{$m768} {
+              float: none;
+              width: 100%;
+              line-height: 20px;
+              margin-top: 20px;
+
+              select{
+                margin: 0 2%;
+                width: 46%;
+              }
+            }
+
+          }
+
+          @media #{$m768} {
+            margin-top: 20px;
           }
 
         }
@@ -563,6 +659,13 @@ body{
 
             span{
               color: $c_green_10;
+            }
+
+
+            @media #{$m768} {
+              float: none;
+              width: 100%;
+              text-align: center;
             }
 
           }
@@ -594,6 +697,12 @@ body{
 
             }
 
+            @media #{$m768} {
+              float: none;
+              width: 100%;
+              text-align: center;
+            }
+
           }
 
         }
@@ -619,6 +728,12 @@ body{
             padding: 10px 5px;
           }
 
+          @media #{$m768} {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+
         }
 
         .informationPanels{
@@ -642,6 +757,13 @@ body{
             }
 
           }
+
+          @media #{$m768} {
+            float: none;
+            width: 100%;
+            text-align: center;
+          }
+
         }
 
         //Breadcrumbs row
